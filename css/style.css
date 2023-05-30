@@ -107,7 +107,7 @@
 .main .container .poster{
     width:50%;
     height: 100%;
-    background-image: url(../../img/fondo.jpeg);
+    background-image: url(../img/fondo-1.png);
     background-size:cover;
     position:relative;
     animation: imagen 5s linear 2s infinite alternate;
@@ -204,12 +204,12 @@
 }
 @keyframes imagen{
     0%{
-        background-image: url(../../img/fondo.jpeg);
+        background-image: url(../img/fondo-1.png);
         background-size:cover;
         background-position:center;
     }
     100%{
-        background-image: url(../../img/fondo-1.jpg);
+        background-image: url(../img/fondo-2.png);
         background-size:cover;
         background-position:center;
     }
