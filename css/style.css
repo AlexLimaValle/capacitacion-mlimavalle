@@ -63,6 +63,25 @@
     text-align:center;
 }
 
+.tabla .tabla__table .tabla__tbody .tabla__tr .tabla__td .tabla__button{
+    width: 30%;
+    height: 30px;
+    background: rgb(224, 73, 8);
+    border: 2px solid transparent;
+    color:#fff;
+    font-weight:bold;
+    border-radius:10px;
+    transition: all .5s;
+    cursor: pointer;
+    margin:5px 0px;
+}
+.tabla .tabla__table .tabla__tbody .tabla__tr .tabla__td .tabla__button:hover{
+    border: 2px solid rgb(240, 240, 235);
+}
+.tabla .tabla__table .tabla__tbody .tabla__tr .tabla__td .tabla__button--background{
+    background: rgb(19, 214, 51);
+}
+
 /*------------------------------------------------*/
 
 .main{
