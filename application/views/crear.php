@@ -8,6 +8,27 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+     <style>
+     .main .container .poster{
+          width:50%;
+          height: 100%;
+          background-image: url(../img/fondo-1.png);
+          background-size:cover;
+          position:relative;
+          animation: imagen 5s linear 2s infinite alternate;
+          transition:all 2s;
+     }
+     @keyframes imagen{
+          0%{
+               background-image: url(../img/fondo-1.png);
+               background-size:cover;
+          }
+          100%{
+               background-image: url(../img/fondo-2.png);
+               background-size:cover;
+          }
+    }
+     </style>
     <header class="header">
         <h1 class="header__h1">Crear cosas</h1>
     </header>
@@ -33,9 +54,7 @@
                     <button class="formulario__button" type="submit">Agregar</button>
                 </form>
             </div>
-            <div class="poster">
-                
-            </div>
+            <div class="poster"></div>
         </div>
     </main>
 </body>
