@@ -105,11 +105,9 @@ body{
     color:#fff;
 }
 
-.main .container .container__tabla .container__table .container__tbody .container__tr
-
 .main .container .form{
-    width:30%;
-    height: 60%;
+    width:40%;
+    height: 75%;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-evenly;
@@ -138,6 +136,7 @@ body{
 .main .container .form .form__inputs .form__input.form__input--size{
     width: 15%;
     padding-left: 10px;
+    text-align: center;
 }
 .main .container .form .form__inputs .form__input:focus{
     background-color: #feffba;
@@ -179,6 +178,14 @@ body{
 .main .container .form .form__buttons .form__button:hover{
     color:#fff;
     background-color:#3441cd;
+}
+.main .container .form .form__buttons .form__button .form__button-a{
+    color:#fff;
+}
+
+.main .container .form .form__buttons .form__button .form__button-a{
+    text-decoration: none;
+    color:#3e4df3;
 }
 
 

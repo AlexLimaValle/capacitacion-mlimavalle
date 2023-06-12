@@ -1,10 +1,10 @@
 <?php
     defined("BASEPATH") OR exit('Not direct script access allowed');
 
-    class Bases extends CI_Controller{
-        public function __construct(){
-            parent::__construct();
-            $this->load->model('user_model');
+    class Bases extends CI_Model{
+        public function save($data){
+            $this->db->query("ALTER TABLE cosas AUTO_INCREMENT 1");
+            $this->db->insert("cosas",$data);
         }
     }
 

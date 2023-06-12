@@ -10,7 +10,7 @@
 <body>
     <main class="main">
         <div class="container">
-            <form class="form" action="<?php echo base_url('save')?>" method="post">
+            <form class="form" action="<?php echo base_url('save');?>" method="post">
                 <div class="form__inputs">
                     <label for="nombreProducto" class="form__label">Ingrese nombre: </label>
                     <input class="form__input" type="text" name="nombre" id="nombreProducto" placeholder="Ingrese su nombre">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="form__buttons">
                     <button type="submit" class="form__button">Agregar</button>
-                    <button class="form__button"><a href="<?php echo base_url('listar')?>" class="form__button-a">ver listas</a></button>
+                    <button class="form__button"><a class="form__button-a" href="<?php echo base_url('listar')?>" class="form__button-a">ver listas</a></button>
                 </div>
             </form>
         </div>
