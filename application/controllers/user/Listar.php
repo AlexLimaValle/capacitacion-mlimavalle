@@ -10,7 +10,7 @@ class Listar extends CI_Controller {
 
 
 	public function index(){
-
-		$this->load->view('user/listar');
+		$data = array("data"=>$this->Bases->getCosas());
+		$this->load->view('user/listar',$data);
 	}
 }

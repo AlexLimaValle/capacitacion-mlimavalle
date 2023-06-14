@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Add extends CI_Controller {
-	public function __contruct(){
+	public function __construct(){
 		parent::__construct();
 		$this->load->model("Bases");
 	}
@@ -13,7 +13,7 @@ class Add extends CI_Controller {
 	}
 
 	public function save(){
-		$name = $this->input->post("name");
+		$name = $this->input->post("nombre");
 		$cantidad = $this->input->post("cantidad");
 		$informacion = $this->input->post("informacion");
 

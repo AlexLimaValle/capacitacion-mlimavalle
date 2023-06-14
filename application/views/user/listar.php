@@ -20,16 +20,18 @@
                         <th class="container__th">Acciones</th>
                     </thead>
                     <tbody class="container__tbody">
-                        <tr class="container__tr">
-                            <td class=container__td>1</td>
-                            <td class=container__td>Lapiz</td>
-                            <td class=container__td>3</td>
-                            <td class=container__td>Lapiz marca bit</td>
-                            <td class=container__td>
-                                <button class="container__button">Editar</button>
-                                <button class="container__button">Borrar</button>
-                            </td>
-                        </tr>
+                        <?php foreach($data as $key => $value):?>
+                            <tr class="container__tr">
+                                <td class=container__td><?=$value->id?></td>
+                                <td class=container__td><?=$value->nombre?></td>
+                                <td class=container__td><?=$value->cantidad?></td>
+                                <td class=container__td><?=$value->informacion?></td>
+                                <td class=container__td>
+                                    <button class="container__button">Editar</button>
+                                    <button class="container__button">Borrar</button>
+                                </td>
+                            </tr>
+                        <?php endforeach;?>
                     </tbody>
                 </table>
             </div>
