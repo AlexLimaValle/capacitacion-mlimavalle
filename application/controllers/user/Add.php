@@ -13,16 +13,32 @@ class Add extends CI_Controller {
 	}
 
 	public function save(){
-		$name = $this->input->post("nombre");
+		$nombre = $this->input->post("nombre");
 		$cantidad = $this->input->post("cantidad");
 		$informacion = $this->input->post("informacion");
 
-		$data = array(
-			"nombre" => $name,
-			"cantidad" => $cantidad,
-			"informacion" => $informacion
-		);
+		$this->db->where("nombre",$nombre);
 
-		$this->Bases->save($data);
+		$query = $this->db->get("cosas");
+
+		$this->form_validation->set_rules('nombre', 'nombre', 'required|min_length[1]');
+		$this->form_validation->set_rules('cantidad', 'cantidad', 'required');
+		$this->form_validation->set_rules('informacion', 'cantidad','required|min_length[10]');
+
+		if ($this->form_validation->run() == FALSE && $query->num_rows() > 0){
+				$this->load->view('user/add');
+		}
+		else{
+			$data = array(
+				"nombre" => $nombre,
+				"cantidad" => $cantidad,
+				"informacion" => $informacion
+			);
+	
+			$this->Bases->save($data);
+			redirect(base_url("user/listar"));
+		}
+
+
 	}
 }

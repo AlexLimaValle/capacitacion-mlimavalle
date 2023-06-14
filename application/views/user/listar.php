@@ -20,9 +20,9 @@
                         <th class="container__th">Acciones</th>
                     </thead>
                     <tbody class="container__tbody">
-                        <?php foreach($data as $key => $value):?>
+                        <?php $numero=1; foreach($data as $key => $value):?>
                             <tr class="container__tr">
-                                <td class=container__td><?=$value->id?></td>
+                                <td class=container__td><?php echo $numero++;?></td>
                                 <td class=container__td><?=$value->nombre?></td>
                                 <td class=container__td><?=$value->cantidad?></td>
                                 <td class=container__td><?=$value->informacion?></td>

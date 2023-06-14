@@ -17,7 +17,7 @@
                 </div>
                 <div class="form__inputs">
                     <label for="cantidadDeProducto" class="form__label">Ingrese cantidad: </label>
-                    <input class="form__input form__input--size" type="number" name="cantidad" id="cantidadDeProducto">
+                    <input class="form__input form__input--size" type="number" min="1" name="cantidad" id="cantidadDeProducto">
                 </div>
                 <div class="form__textarea">
                     <label for="campoDeTexto" class="form__label">Informacion: </label>
