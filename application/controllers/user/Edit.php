@@ -8,10 +8,11 @@ class Edit extends CI_Controller {
 	}
 	
 	public function index($id){
-		echo $id;
+		$data = $this->Bases->getCosa($id);
+		$this->load->view('user/edit',$data);
 	}
 
-	public function save(){
+	public function update($id){
 		$nombre = $this->input->post("nombre");
 		$cantidad = $this->input->post("cantidad");
 		$informacion = $this->input->post("informacion");
@@ -21,7 +22,7 @@ class Edit extends CI_Controller {
 		$this->form_validation->set_rules('informacion', 'cantidad','required|min_length[10]');
 
 		if ($this->form_validation->run() == FALSE){
-				$this->load->view('user/edit');
+			$this->index($id);
 		}else{
 			$data = array(
 				"nombre" => $nombre,
@@ -29,10 +30,8 @@ class Edit extends CI_Controller {
 				"informacion" => $informacion
 			);
 	
-			$this->Bases->save($data);
+			$this->Bases->update($data,$id);
 			redirect(base_url("user/listar"));
 		}
-
-
 	}
 }

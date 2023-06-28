@@ -27,10 +27,10 @@
                                 <td class="container__td"><?=$value->cantidad?></td>
                                 <td class="container__td"><?=$value->informacion?></td>
                                 <td class="container__td">
-                                    <a href="href=<?php echo base_url()?>cosas/<?php echo $value->id;?>" class="container__link">
+                                    <a href="<?php echo base_url();?>cosas/<?php echo $value->id;?>" class="container__link">
                                         <button class="container__button">Editar</button>
                                     </a>
-                                    <a href="#" class="container__link">
+                                    <a href="<?php echo base_url();?>cosas/delete/<?php echo $value->id;?>" class="container__link">
                                         <button class="container__button container__button--background">Borrar</button>
                                     </a>
                                 </td>

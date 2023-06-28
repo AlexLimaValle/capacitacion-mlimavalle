@@ -30,8 +30,5 @@
             </form>
         </div>
     </main>
-    <footer class="footer">
-
-    </footer>
 </body>
 </html>

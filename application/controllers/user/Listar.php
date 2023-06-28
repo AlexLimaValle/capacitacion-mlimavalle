@@ -13,4 +13,9 @@ class Listar extends CI_Controller {
 		$data = array("data"=>$this->Bases->getCosas());
 		$this->load->view('user/listar',$data);
 	}
+
+	public function delete($id){
+		$this->Bases->delete($id);
+		redirect(base_url("user/listar"));
+	}
 }

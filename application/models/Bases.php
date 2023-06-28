@@ -15,7 +15,24 @@
             $result = $this->db->get();
             return $result->result();
         }
-        
+
+        public function getCosa($id){
+            $this->db->select("c.*");
+            $this->db->from("cosas c");
+            $this->db->where("c.id",$id);
+            $result = $this->db->get();
+            return $result->row();
+        }
+
+        public function update($data,$id){
+           $this->db->where("id",$id);
+           $this->db->update("cosas",$data);
+        }
+
+        public function delete($id){
+            $this->db->where("id",$id);
+            $this->db->delete("cosas");
+         }
     }
 
 ?>
