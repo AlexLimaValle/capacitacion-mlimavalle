@@ -15,6 +15,9 @@ body{
     height:100vh;
     display:flex;
     flex-flow: row wrap;
+    justify-content: center;
+    /* background: url("../img/fondo.jpg");
+    background-size: cover; */
 }
 
 
@@ -73,7 +76,6 @@ body{
 .main{
     width: 90%;
     height:100%;
-
 }
 
 
@@ -97,13 +99,39 @@ body{
     height: auto;
     border: 1px solid #000;
     text-align: center;
-    border-radius: 5px;
+    border-collapse: collapse;
 }
 
 .main .container .container__tabla .container__table .container__thead{
     background-color: #3e4ef9;
     color:#fff;
 }
+
+.main .container .container__tabla .container__table .container__tbody .container__tr .container__td .container__link{
+    width: 20%;
+    height: 70%;
+    text-decoration: none;
+    margin: 5px 0px;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.main .container .container__tabla .container__table .container__tbody .container__tr .container__td .container__link .container__button{
+    border-radius: 8px;
+    padding: 0px 5px;
+    border: 1px #3e4ef9 transparent;
+    background:#65EC18;
+    color:#fff;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+.main .container .container__tabla .container__table .container__tbody .container__tr .container__td .container__link .container__button.container__button--background{
+    background:#F53214;
+}
+
 
 .main .container .form{
     width:40%;
@@ -150,6 +178,8 @@ body{
 .main .container .form .form__textarea .form__textareas{
     width: 100%;
     height:70%;
+    border-radius: 10px;
+    border: 1px solid #b9b3b3;
 }
 
 .main .container .form .form__buttons{
@@ -179,7 +209,7 @@ body{
     color:#fff;
     background-color:#3441cd;
 }
-.main .container .form .form__buttons .form__button .form__button-a{
+.main .container .form .form__buttons .form__button .form__button-a:hover{
     color:#fff;
 }
 

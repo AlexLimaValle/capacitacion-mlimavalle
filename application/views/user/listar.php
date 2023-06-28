@@ -22,13 +22,17 @@
                     <tbody class="container__tbody">
                         <?php $numero=1; foreach($data as $key => $value):?>
                             <tr class="container__tr">
-                                <td class=container__td><?php echo $numero++;?></td>
-                                <td class=container__td><?=$value->nombre?></td>
-                                <td class=container__td><?=$value->cantidad?></td>
-                                <td class=container__td><?=$value->informacion?></td>
-                                <td class=container__td>
-                                    <button class="container__button">Editar</button>
-                                    <button class="container__button">Borrar</button>
+                                <td class="container__td"><?php echo $numero++;?></td>
+                                <td class="container__td"><?=$value->nombre?></td>
+                                <td class="container__td"><?=$value->cantidad?></td>
+                                <td class="container__td"><?=$value->informacion?></td>
+                                <td class="container__td">
+                                    <a href="href=<?php echo base_url()?>cosas/<?php echo $value->id;?>" class="container__link">
+                                        <button class="container__button">Editar</button>
+                                    </a>
+                                    <a href="#" class="container__link">
+                                        <button class="container__button container__button--background">Borrar</button>
+                                    </a>
                                 </td>
                             </tr>
                         <?php endforeach;?>

@@ -2,24 +2,37 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Edit extends CI_Controller {
+	public function __construct(){
+		parent::__construct();
+		$this->load->model("Bases");
+	}
+	
+	public function index($id){
+		echo $id;
+	}
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/userguide3/general/urls.html
-	 */
-	public function index(){
+	public function save(){
+		$nombre = $this->input->post("nombre");
+		$cantidad = $this->input->post("cantidad");
+		$informacion = $this->input->post("informacion");
+		$this->form_validation->set_rules('nombre', 'nombre', 'is_unique[cosas.nombre]');
+		$this->form_validation->set_rules('nombre', 'nombre', 'required|min_length[1]');
+		$this->form_validation->set_rules('cantidad', 'cantidad', 'required');
+		$this->form_validation->set_rules('informacion', 'cantidad','required|min_length[10]');
 
-		$this->load->view('user/edit');
+		if ($this->form_validation->run() == FALSE){
+				$this->load->view('user/edit');
+		}else{
+			$data = array(
+				"nombre" => $nombre,
+				"cantidad" => $cantidad,
+				"informacion" => $informacion
+			);
+	
+			$this->Bases->save($data);
+			redirect(base_url("user/listar"));
+		}
+
+
 	}
 }

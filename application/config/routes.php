@@ -55,5 +55,6 @@ $route['add'] = 'user/Add';
 $route['edit'] = 'user/Edit';
 $route['listar'] = 'user/listar';
 $route['save'] = 'user/Add/save';
+$route['cosas/(:num)'] = 'user/Edit/index/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
