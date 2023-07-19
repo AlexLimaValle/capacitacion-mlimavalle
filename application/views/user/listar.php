@@ -10,6 +10,13 @@
 <body>
     <main class="main">
         <div class="container">
+            <form action="<?php echo base_url();?>cosas/filtros" class="container__form" method="POST">
+                <div class="container__filter">
+                    <label class="container__label" for="filtros">Ingrese nombre: </label>
+                    <input type="text" id="filtros" name="filtro" class="container__input-filter">
+                    <button type="submit" class="container__button-filter">Buscar</button>
+                </div>
+            </form>
             <div class="container__tabla">
                 <table class="container__table">
                     <thead class="container__thead">

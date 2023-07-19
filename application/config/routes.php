@@ -58,5 +58,6 @@ $route['save'] = 'user/Add/save';
 $route['cosas/(:num)'] = 'user/Edit/index/$1';
 $route['cosas/update/(:num)'] = 'user/Edit/update/$1';
 $route['cosas/delete/(:num)'] = 'user/Listar/delete/$1';
+$route['cosas/filtros'] = 'user/Filter/filtrar';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
