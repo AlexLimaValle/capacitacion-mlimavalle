@@ -1,16 +1,16 @@
 <?php
     defined("BASEPATH") OR exit('Not direct script access allowed');
 
-    class Basefiltro extends CI_Model{
+    class Getcosa extends CI_Model{
 
-        public function getFilter($var_filter){
+        public function getCosas($id){
             $this->db->select("c.*");
             $this->db->from("cosas c");
-            $this->db->where("c.nombre",$var_filter);
+            $this->db->where("c.id",$id);
             $result = $this->db->get();
-            return $result->result();
+            return $result->row();
         }
-    
+
     }
 
 ?>

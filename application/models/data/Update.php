@@ -1,10 +1,15 @@
 <?php
     defined("BASEPATH") OR exit('Not direct script access allowed');
 
-    class Bases extends CI_Model{
+    class Update extends CI_Model{
 
 
-        public function save($data){
+        public function update($id,$data){
+            $this->db->where('id',$id);
+            $this->db->update('cosas',$data);
+        }
+       
+      /*   public function save($data){
             // $this->db->query("ALTER TABLE cosas AUTO_INCREMENT 1");
             // print_r($data);
             $this->db->insert("cosas",$data);
@@ -32,7 +37,10 @@
         public function delete($id){
             $this->db->where("id",$id);
             $this->db->delete("cosas");
-         }
+         } */
+
+
+
     }
 
 ?>

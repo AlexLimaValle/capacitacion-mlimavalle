@@ -2,27 +2,30 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Edit extends CI_Controller {
-	public function __construct(){
+    public function __construct(){
 		parent::__construct();
-		$this->load->model("Bases");
-	}
-	
-	public function index($id){
-		$data = $this->Bases->getCosa($id);
-		$this->load->view('user/edit',$data);
+		$this->load->model("data/Update");
+		$this->load->model("data/Delete");
+		$this->load->model("data/Getcosa");
 	}
 
-	public function update($id){
-		$nombre = $this->input->post("nombre");
+    public function index($id){
+        $data = array("nombres"=>$this->Getcosa->getCosas($id));
+        $this->load->view('user/Edit',$data);
+    }
+
+    public function cambiar($id){
+        $nombre = $this->input->post("nombre");
 		$cantidad = $this->input->post("cantidad");
 		$informacion = $this->input->post("informacion");
+
 		$this->form_validation->set_rules('nombre', 'nombre', 'is_unique[cosas.nombre]');
 		$this->form_validation->set_rules('nombre', 'nombre', 'required|min_length[1]');
 		$this->form_validation->set_rules('cantidad', 'cantidad', 'required');
 		$this->form_validation->set_rules('informacion', 'cantidad','required|min_length[10]');
 
 		if ($this->form_validation->run() == FALSE){
-			$this->index($id);
+				$this->load->view('user/Edit');
 		}else{
 			$data = array(
 				"nombre" => $nombre,
@@ -30,8 +33,18 @@ class Edit extends CI_Controller {
 				"informacion" => $informacion
 			);
 	
-			$this->Bases->update($data,$id);
-			redirect(base_url("user/listar"));
+			$this->Update->update($id,$data);
+			redirect(base_url("tabla"));
 		}
-	}
+    }
+
+    public function borrar($id){
+        $this->Delete->delete($id);
+        redirect(base_url('tabla'));
+    }
+
 }
+
+
+
+

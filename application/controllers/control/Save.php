@@ -1,27 +1,27 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Add extends CI_Controller {
+class Save extends CI_Controller {
+
 	public function __construct(){
 		parent::__construct();
-		$this->load->model("Bases");
+		$this->load->model("data/Base");
 	}
-	
-	public function index(){
-		$this->load->view('user/add');
-	}
+
 
 	public function save(){
 		$nombre = $this->input->post("nombre");
 		$cantidad = $this->input->post("cantidad");
 		$informacion = $this->input->post("informacion");
+		$tags = $this->input->post("tags");
+
 		$this->form_validation->set_rules('nombre', 'nombre', 'is_unique[cosas.nombre]');
 		$this->form_validation->set_rules('nombre', 'nombre', 'required|min_length[1]');
 		$this->form_validation->set_rules('cantidad', 'cantidad', 'required');
 		$this->form_validation->set_rules('informacion', 'cantidad','required|min_length[10]');
 
 		if ($this->form_validation->run() == FALSE){
-				$this->load->view('user/add');
+				$this->load->view('user/New_cosa');
 		}else{
 			$data = array(
 				"nombre" => $nombre,
@@ -29,10 +29,18 @@ class Add extends CI_Controller {
 				"informacion" => $informacion
 			);
 	
-			$this->Bases->save($data);
-			redirect(base_url("user/listar"));
+			$this->Base->save($data,$tags);
+			redirect(base_url("tabla"));
 		}
+	}
 
-
+	
+	public function index()
+	{
+		$this->load->view('user/New_cosa');
 	}
 }
+
+
+
+
