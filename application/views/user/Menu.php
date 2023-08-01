@@ -18,7 +18,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="" class="container__option-a container__option-a--transform-z">
+                <a href="<?php echo base_url('tabla');?>" class="container__option-a container__option-a--transform-z">
                     <div class="container__option">
                        <!--  <img src="../../../img/main.webp" alt="" class="container__img"> -->
                         <div class="container__text">

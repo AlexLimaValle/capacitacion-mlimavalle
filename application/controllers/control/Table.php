@@ -15,8 +15,7 @@ class Table extends CI_Controller {
 		$var_cosas = $this->Informacion->tabla();
 		$var_tags = $this->Tags->getAllTags();
 		$array_definit = [];
-		
-
+				
 		foreach($var_cosas as $cosa){
 			$array_new = [
 				'id'=>$cosa->id,
