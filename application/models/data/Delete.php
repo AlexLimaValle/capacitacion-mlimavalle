@@ -8,6 +8,11 @@
             $this->db->delete('cosas');
         }
 
+        public function deleteAllTags($id){
+            $this->db->where("id_cosas",$id);
+            $this->db->delete('tags_items');
+        }
+
     }
 
 ?>

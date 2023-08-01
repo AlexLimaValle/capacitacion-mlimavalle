@@ -9,6 +9,16 @@
             return $tags->result();
         }
 
+        public function getAllTags(){
+            $query_tags = "
+            select c.id ,t.nombre 
+            from cosas c 
+            inner join tags_items ti on ti.id_cosas = c.id 
+            inner join tags t on t.id = ti.id_tags ";
+            $result_tags = $this->db->query($query_tags);
+            return $result_tags->result();
+        }
+
     }
 
 ?>

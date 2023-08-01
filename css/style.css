@@ -360,6 +360,23 @@
     
 }
 
+.container .tables .table .table__tr .table__td.table__td--display{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.container .tables .table .table__tr .table__td.table__td--display .table__tags{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 4px;
+    border-radius: 10px;
+    padding: 2px 4px;
+    border: 1px solid #000;
+}
+
 .container .tables .table .table__tr .table__td .table__a{
     display: inline-block;
     width: 70px;

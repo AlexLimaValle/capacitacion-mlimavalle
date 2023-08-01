@@ -39,6 +39,7 @@ class Edit extends CI_Controller {
     }
 
     public function borrar($id){
+		$this->Delete->deleteAllTags($id);
         $this->Delete->delete($id);
         redirect(base_url('tabla'));
     }

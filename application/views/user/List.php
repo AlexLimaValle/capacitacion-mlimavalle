@@ -34,19 +34,23 @@
                 </tr>
                 <?php foreach($datos as $item):?>
                     <tr class="table__tr">
-                        <td class="table__td"><?= $item->id?></td>
-                        <td class="table__td"><?= $item->nombre?></td>
-                        <td class="table__td"><?= $item->cantidad?></td>
-                        <td class="table__td"><?= $item->informacion?></td>
+                        <td class="table__td"><?= $item['id'];?></td>
+                        <td class="table__td"><?= $item['nombre'];?></td>
+                        <td class="table__td"><?= $item['cantidad'];?></td>
+                        <td class="table__td"><?= $item['informacion'];?></td>
                         <td class="table__td">
-                            <a href="<?php base_url()?>update/<?= $item->id?>" class="table__a">
+                            <a href="<?php base_url()?>update/<?= $item['id']?>" class="table__a">
                                 <button class="table__button" type="button">UPDATE</button>
                             </a>
-                            <a href="<?php base_url()?>delete/<?= $item->id?>" class="table__a">
+                            <a href="<?php base_url()?>delete/<?= $item['id']?>" class="table__a">
                                 <button class="table__button table__button--background" type="button">DELETE</button>
                             </a>
                         </td>
-                        <td></td>
+                        <td class="table__td table__td--display">
+                            <?php foreach($item['tags'] as $tag):?>
+                                <div class="table__tags" style="background:<?=color();?>"><?= $tag;?></div>
+                            <?php endforeach;?>
+                        </td>
                     </tr>
                 <?php endforeach;?>
             </table>
