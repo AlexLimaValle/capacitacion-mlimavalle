@@ -14,7 +14,7 @@
                     <div class="container__option">
                       <!--   <img src="../../../img/left.webp" alt="" class="container__img"> -->
                         <div class="container__text">
-                            <h1 class="container__h1">Nueva cosa</h1>
+                            <h1 class="container__h1">NUEVA COSA</h1>
                         </div>
                     </div>
                 </a>
@@ -22,7 +22,7 @@
                     <div class="container__option">
                        <!--  <img src="../../../img/main.webp" alt="" class="container__img"> -->
                         <div class="container__text">
-                            <h1 class="container__h1">Datos</h1>
+                            <h1 class="container__h1">DATOS</h1>
                         </div>
                     </div>
                 </a>
@@ -30,7 +30,7 @@
                     <div class="container__option">
                         <!-- <img src="../../../img/right.webp" alt="" class="container__img"> -->
                         <div class="container__text">
-                            <h1 class="container__h1">Tags</h1>
+                            <h1 class="container__h1">ABM TAGS</h1>
                         </div>
                     </div>
                 </a>

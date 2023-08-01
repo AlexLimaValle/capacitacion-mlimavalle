@@ -3,9 +3,8 @@
 
     class Base extends CI_Model{
 
-        public function save($data,$tags){
+        public function save($data){
             $this->db->query("ALTER TABLE cosas AUTO_INCREMENT 1");
-            
             $this->db->insert("cosas",$data);
         }
 

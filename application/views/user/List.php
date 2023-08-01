@@ -15,11 +15,19 @@
                     <button class="filter__button">Filtrar</button>
                 </a>
             </div>
+            <div class="tables_buttons">
+                <a href="<?php base_url();?>addCosa" class="tables__buttons-a">
+                    <button class="tables__button tables__button--border-radius" type="button">Agregar</button>
+                </a>
+                <a href="<?php echo base_url();?>" class="tables__buttons-a">
+                    <button class="tables__button" type="button">Menu</button>
+                </a>
+            </div>
             <table class="table">
                 <tr class="table__tr">
                     <th class="table__th">ID</th>
                     <th class="table__th">NOMBRE</th>
-                    <th class="table__th">CANTINDAD</th>
+                    <th class="table__th">CANTIDAD</th>
                     <th class="table__th">INFORMACION</th>
                     <th class="table__th">ACCIONES</th>
                     <th class="table__th">TAGS</th>
@@ -35,21 +43,13 @@
                                 <button class="table__button" type="button">UPDATE</button>
                             </a>
                             <a href="<?php base_url()?>delete/<?= $item->id?>" class="table__a">
-                                <button class="table__button" type="button">DELETE</button>
+                                <button class="table__button table__button--background" type="button">DELETE</button>
                             </a>
                         </td>
                         <td></td>
                     </tr>
                 <?php endforeach;?>
             </table>
-            <div class="tables_buttons">
-                <a href="<?php base_url();?>addCosa" class="tables__buttons-a">
-                    <button class="tables__button" type="button">Agregar</button>
-                </a>
-                <a href="<?php echo base_url();?>" class="tables__buttons-a">
-                    <button class="tables__button" type="button">Menu</button>
-                </a>
-            </div>
         </div>
     </div>
 </body>

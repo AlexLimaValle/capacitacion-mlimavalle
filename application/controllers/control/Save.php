@@ -6,6 +6,9 @@ class Save extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model("data/Base");
+		$this->load->model("data/Tags");
+		$this->load->model("data/Addtags");
+		$this->load->helper('color_random');
 	}
 
 
@@ -21,7 +24,9 @@ class Save extends CI_Controller {
 		$this->form_validation->set_rules('informacion', 'cantidad','required|min_length[10]');
 
 		if ($this->form_validation->run() == FALSE){
-				$this->load->view('user/New_cosa');
+			$resultado = $this->Tags->getTags();
+			$datos = array("tags"=>$resultado);
+			$this->load->view('user/New_cosa',$datos);
 		}else{
 			$data = array(
 				"nombre" => $nombre,
@@ -29,7 +34,8 @@ class Save extends CI_Controller {
 				"informacion" => $informacion
 			);
 	
-			$this->Base->save($data,$tags);
+			$this->Base->save($data);
+			$this->Addtags->addTag($tags,$nombre);
 			redirect(base_url("tabla"));
 		}
 	}
