@@ -9,6 +9,14 @@
             return $query->result();
         }
 
+        public function tablaCosa($nombre){
+            $this->db->select("*");
+            $this->db->from("cosas");
+            $this->db->where("nombre",$nombre);
+            $resultado = $this->db->get();
+            return $resultado->result();
+        }
+
     }
 
 ?>

@@ -26,7 +26,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="container__option-a container__option-a--transform-right">
+                <a href="<?php echo base_url('abm');?>" class="container__option-a container__option-a--transform-right">
                     <div class="container__option">
                         <!-- <img src="../../../img/right.webp" alt="" class="container__img"> -->
                         <div class="container__text">

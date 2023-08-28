@@ -9,7 +9,7 @@
 <body>
     <main class="container">
         <div class="container__form">
-            <h3 class="container__form-h3"><?=$nombres->nombre?></h3>
+            <h3 class="container__form-h3"><?=strtoupper($nombres->nombre);?></h3>
             <form action="<?php base_url();?>/update/save/<?=$nombres->id?>" class="form" method="POST">
                 <div class="form__group form__group-input">
                     <label for="nombre" class="form__label">Nombre:</label>
@@ -21,7 +21,12 @@
                 </div>
                 <div class="form__group form__group--border">
                     <div class="form__tags">
-
+                        <?php foreach($tags as $tag):?>
+                            <div class="form__tag" style="background:<?=color();?>">
+                                <input type="checkbox" id="<?= $tag->nombre?>" name="tags[]" value="<?= $tag->id?>" class="form__tag-check">
+                                <label for="<?= $tag->nombre?>" class="form__tag-label"><?= $tag->nombre?></label>
+                            </div>
+                        <?php endforeach;?>
                     </div>
                 </div>
                 <div class="form__group">
